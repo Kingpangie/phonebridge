@@ -1,0 +1,10 @@
+Third-party components bundled with PhoneBridge releases:
+
+- adb.exe, AdbWinApi.dll, AdbWinUsbApi.dll (vendor/adb/)
+  Google Android platform-tools, distributed by Google LLC
+  under the Apache License 2.0.
+  https://developer.android.com/tools/releases/platform-tools
+
+- signtool.exe (downloaded at build time, not committed)
+  Microsoft Windows SDK, from the Microsoft.Windows.SDK.BuildTools
+  NuGet package.
