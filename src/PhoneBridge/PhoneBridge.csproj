@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PhoneBridge</AssemblyName>
+    <RootNamespace>PhoneBridge</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>1.1.0</Version>
+    <Product>PhoneBridge</Product>
+    <Company>PhoneBridge Project</Company>
+    <Description>Android &amp; iPhone desktop toolkit: device info, apps, files, backups</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\vendor\adb\**\*.*" CopyToOutputDirectory="PreserveNewest" LinkBase="adb\" />
+  </ItemGroup>
+
+</Project>

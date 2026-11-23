@@ -1,0 +1,37 @@
+<UserControl x:Class="PhoneBridge.Views.AppsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <DockPanel Margin="0,0,0,16">
+      <StackPanel>
+        <TextBlock Text="Apps" FontSize="24" FontWeight="Bold" Foreground="{StaticResource TextBrush}"/>
+        <TextBlock x:Name="DeviceLabel" Text="No device" FontSize="13" Foreground="{StaticResource SubtleBrush}"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+        <TextBox x:Name="SearchBox" Width="220" Padding="8,6" VerticalContentAlignment="Center" TextChanged="Search_Changed"/>
+        <Button Style="{StaticResource PrimaryButton}" Content="Load apps" Margin="8,0,0,0" Click="Load_Click"/>
+      </StackPanel>
+    </DockPanel>
+
+    <Border Grid.Row="1" Style="{StaticResource Card}">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="AppList" FontSize="13" BorderThickness="0" Background="Transparent"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,12,0,0">
+          <Button Style="{StaticResource PrimaryButton}" Content="Uninstall selected" Background="#EF4444" Click="Uninstall_Click"/>
+          <Button Style="{StaticResource SecondaryButton}" Content="Install APK…" Margin="8,0,0,0" Click="InstallApk_Click"/>
+          <TextBlock x:Name="AppCount" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="12" Foreground="{StaticResource SubtleBrush}"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

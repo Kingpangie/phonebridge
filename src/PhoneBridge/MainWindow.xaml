@@ -1,0 +1,51 @@
+<Window x:Class="PhoneBridge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:PhoneBridge.Views"
+        Title="PhoneBridge" Height="680" Width="1080"
+        MinHeight="560" MinWidth="900"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource PageBrush}">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="200"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <!-- Sidebar -->
+    <Border Background="{StaticResource SidebarBrush}">
+      <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Margin="0,24,0,24">
+          <TextBlock Text="PhoneBridge" FontSize="20" FontWeight="Bold" Foreground="White" Margin="16,0,0,2"/>
+          <TextBlock Text="Android &amp; iPhone toolkit" FontSize="11" Foreground="#94A3B8" Margin="16,0,0,0"/>
+        </StackPanel>
+        <StackPanel x:Name="NavPanel" Margin="0,12,0,0">
+          <Button Style="{StaticResource NavButton}" Content="Dashboard" Tag="dashboard" Click="Nav_Click"/>
+          <Button Style="{StaticResource NavButton}" Content="Apps" Tag="apps" Click="Nav_Click"/>
+          <Button Style="{StaticResource NavButton}" Content="Files" Tag="files" Click="Nav_Click"/>
+          <Button Style="{StaticResource NavButton}" Content="Tools" Tag="tools" Click="Nav_Click"/>
+          <Button Style="{StaticResource NavButton}" Content="Export" Tag="export" Click="Nav_Click"/>
+          <Button Style="{StaticResource NavButton}" Content="Backup" Tag="backup" Click="Nav_Click"/>
+        </StackPanel>
+      </DockPanel>
+    </Border>
+
+    <!-- Content -->
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <ContentControl x:Name="ContentHost" Margin="24,24,24,8"/>
+
+      <!-- Status bar -->
+      <Border Grid.Row="1" Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0" Padding="16,8">
+        <DockPanel>
+          <Ellipse Width="9" Height="9" Fill="#22C55E" VerticalAlignment="Center" Margin="0,0,7,0"/>
+          <TextBlock x:Name="StatusText" Text="Ready" FontSize="12" Foreground="{StaticResource SubtleBrush}" VerticalAlignment="Center"/>
+          <TextBlock x:Name="DeviceCountText" DockPanel.Dock="Right" HorizontalAlignment="Right" FontSize="12" Foreground="{StaticResource SubtleBrush}" VerticalAlignment="Center"/>
+        </DockPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</Window>

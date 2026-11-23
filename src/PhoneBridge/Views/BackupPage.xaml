@@ -1,0 +1,44 @@
+<UserControl x:Class="PhoneBridge.Views.BackupPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel>
+    <TextBlock Text="Backup" FontSize="24" FontWeight="Bold" Foreground="{StaticResource TextBrush}" Margin="0,0,0,4"/>
+    <TextBlock x:Name="DeviceLabel" Text="No device" FontSize="13" Foreground="{StaticResource SubtleBrush}" Margin="0,0,0,16"/>
+
+    <Border Style="{StaticResource Card}" MaxWidth="640" HorizontalAlignment="Left" Margin="0,0,0,16">
+      <StackPanel>
+        <TextBlock Text="What gets backed up" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,8"/>
+        <TextBlock TextWrapping="Wrap" FontSize="13" Foreground="{StaticResource SubtleBrush}" Margin="0,0,0,12"
+                   Text="Your user media from the phone: DCIM (camera), Pictures, Download, Movies, Music, Documents, WhatsApp media. Each backup is a timestamped folder on this PC — plain files, no proprietary format."/>
+        <StackPanel Orientation="Horizontal">
+          <Button x:Name="BackupButton" Style="{StaticResource PrimaryButton}" Content="Back up now…" Click="Backup_Click"/>
+        </StackPanel>
+        <TextBlock x:Name="BackupStatus" Margin="0,12,0,0" FontSize="12" Foreground="{StaticResource SubtleBrush}"/>
+      </StackPanel>
+    </Border>
+
+    <Border Style="{StaticResource Card}" MaxWidth="640" HorizontalAlignment="Left">
+      <StackPanel>
+        <TextBlock Text="Automatic daily backup" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,8"/>
+        <TextBlock TextWrapping="Wrap" FontSize="13" Foreground="{StaticResource SubtleBrush}" Margin="0,0,0,12"
+                   Text="Registers a Windows scheduled task. Connect the phone by the scheduled time and a media backup runs automatically into the folder you choose."/>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="Time:" VerticalAlignment="Center" Margin="0,0,6,0" FontSize="13"/>
+          <ComboBox x:Name="HourBox" Width="70" SelectedIndex="21">
+            <ComboBoxItem Content="00:00"/><ComboBoxItem Content="01:00"/><ComboBoxItem Content="02:00"/>
+            <ComboBoxItem Content="03:00"/><ComboBoxItem Content="04:00"/><ComboBoxItem Content="05:00"/>
+            <ComboBoxItem Content="06:00"/><ComboBoxItem Content="07:00"/><ComboBoxItem Content="08:00"/>
+            <ComboBoxItem Content="09:00"/><ComboBoxItem Content="10:00"/><ComboBoxItem Content="11:00"/>
+            <ComboBoxItem Content="12:00"/><ComboBoxItem Content="13:00"/><ComboBoxItem Content="14:00"/>
+            <ComboBoxItem Content="15:00"/><ComboBoxItem Content="16:00"/><ComboBoxItem Content="17:00"/>
+            <ComboBoxItem Content="18:00"/><ComboBoxItem Content="19:00"/><ComboBoxItem Content="20:00"/>
+            <ComboBoxItem Content="21:00"/><ComboBoxItem Content="22:00"/><ComboBoxItem Content="23:00"/>
+          </ComboBox>
+          <Button x:Name="ScheduleButton" Style="{StaticResource PrimaryButton}" Content="Schedule…" Margin="8,0,0,0" Click="Schedule_Click"/>
+          <Button Style="{StaticResource SecondaryButton}" Content="Remove schedule" Margin="8,0,0,0" Click="Unschedule_Click"/>
+        </StackPanel>
+        <TextBlock x:Name="ScheduleStatus" Margin="0,12,0,0" FontSize="12" Foreground="{StaticResource SubtleBrush}"/>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

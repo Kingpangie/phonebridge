@@ -1,0 +1,18 @@
+# Build outputs
+bin/
+obj/
+publish/
+dist/
+testinstall/
+
+# Downloaded at build time (Microsoft.Windows.SDK.BuildTools NuGet)
+vendor/signtool/
+vendor/*.nupkg
+
+# IDE / OS
+.vs/
+.idea/
+*.user
+*.suo
+Thumbs.db
+.DS_Store
